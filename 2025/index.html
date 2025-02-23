@@ -1,785 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PyConKyushu はプログラミング言語 Python のユーザが集う日本の九州地区で実施される技術miniカンファレンスです。2025年は、宮崎で開催することになりました！"
+    />
+    <meta
+      name="keywords"
+      content="PyCon,Python,PyCon Kyushu,鹿児島,カンファレンス"
+    />
+    <meta property="og:title" content="PyCon Kyushu 2025 miyazaki" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="PyConKyushu はプログラミング言語 Python のユーザが集う日本の九州地区で実施される技術miniカンファレンスです。2025年は、宮崎で開催することになりました！"
+    />
+    <meta property="og:url" content="https://kyushu.pycon.jp/2025/" />
+    <meta property="og:site_name" content="PyCon Kyushu 2025 miyazaki" />
+    <meta
+      property="og:image"
+      content="https://kyushu.pycon.jp/2025/assets/images/miyazaki-logo.png"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PyConKyushu はプログラミング言語 Python のユーザが集う日本の九州地区で実施される技術miniカンファレンスです。2024年は、鹿児島で開催することになりました！">
-  <meta name="keywords" content="PyCon,Python,PyCon Kyushu,鹿児島,カンファレンス">
-  <meta property="og:title" content="PyCon Kyushu 2024 kagoshima">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="PyConKyushu はプログラミング言語 Python のユーザが集う日本の九州地区で実施される技術miniカンファレンスです。2024年は、鹿児島で開催することになりました！">
-  <meta property="og:url" content="https://kyushu.pycon.jp/2024/">
-  <meta property="og:site_name" content="PyCon Kyushu 2024 kagoshima">
-  <meta property="og:image" content="https://kyushu.pycon.jp/2024/assets/images/meta_main_title.png">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="https://unpkg.com/vue-router@4"></script>
-  <link href="./assets/css/output.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="logo-placeholder">
+      <img
+        class="logo"
+        src="/assets//images/miyazaki-logo-transparent.png"
+        alt="PyCon Kyushu Miyazakiのロゴです"
+      />
+    </div>
 
-  <div id="app">
-    <div class="menu flex justify-between items-center p-2 bg-cyan-600 shadow-md fixed top-0 w-full">
-      <div class="flex flex-wrap items-center justify-between w-full p-1">
+    <div id="social" class="social-logo-container">
+      <p>
+        <a
+          href="https://twitter.com/PyConK"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Twitter"
+          ><i class="fa-brands fa-x-twitter fa-3x"></i></a
+        >&nbsp;
+        <a
+          href="https://www.facebook.com/kyushu.pycon.jp"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Facebook"
+          ><i class="fa-brands fa-facebook fa-3x"></i></a
+        >&nbsp;
+        <a
+          href="https://www.youtube.com/@pyconkyushu4071"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Youtube"
+          ><i class="fa-brands fa-youtube fa-3x"></i></a
+        >&nbsp;
+        <a
+          href="https://pyconjp.blogspot.com/search/label/kyushu"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Blogger"
+          ><i class="fa-brands fa-blogger fa-3x"></i></a
+        >&nbsp;
+      </p>
+    </div>
 
-        <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl mr-4 font-custom"
-          aria-label="logo">
-          <img src="./assets/images/logo2.png" alt="Logo" class="w-12" style="height: auto;">
-          <div className="font-roboto">
-            PyCon Kyushu
+    <div class="main-content">
+      <div class="announcement">2025年春に開催を計画中です</div>
+
+      <div class="staff-recruitment">
+        <h2>実行委員を募集します</h2>
+
+        <div class="description">
+          <div class="description-inner">
+            <p>
+              2024年9月に宮崎でPython Boot
+              Campが開催されたことがきっかけとなり<br />
+              現在、宮崎でのPyCon Kyushu開催を検討しています。
+            </p>
+
+            <p>
+              PyCon
+              Kyushuを開催するためには、実行委員の協力が絶対に必要です。<br />
+              そのため、現地またはリモートで実行委員として協力してくれる方を<br />
+              募集したいと考えています。
+            </p>
+
+            <p>
+              もし協力してもいいという方は、以下の応募フォームよりご連絡ください。
+            </p>
+
+            <p>宮崎での開催を実現するため、ぜひご協力をおねがいします！！</p>
           </div>
-
-        </a>
-
-        <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-          <button @click="toggleMenu"
-            class="fixed top-4 right-4 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-            type="button">
-            <!-- <span class="block relative w-6 h-px rounded-sm bg-black"></span>
-            <span class="block relative w-6 h-px rounded-sm bg-black mt-1"></span>
-            <span class="block relative w-6 h-px rounded-sm bg-black mt-1"></span> -->
-            <i class="material-icons">menu</i>
-          </button>
         </div>
-        <div v-show="isOpen" class="lg:flex flex-grow items-center" id="example-navbar-warning">
-          <ul class="flex flex-col lg:flex-row list-none ml-auto">
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-black hover:opacity-75"
-                href="#pablo" @click.prevent="showContent('Home'); closeMenu()">
-                Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-black hover:opacity-75"
-                href="#pablo" @click.prevent="showContent('Sessions'); closeMenu()">
-                Session
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-black hover:opacity-75"
-                href="#pablo" @click.prevent="showContent('TimeTable'); closeMenu()">
-                TimeTable
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-xl uppercase font-bold leading-snug text-black hover:opacity-75"
-                href="#pablo" @click.prevent="showContent('CoC'); closeMenu()">
-                行動規範
-              </a>
-            </li>
-          </ul>
-        </div>
+
+        <a
+          href="https://forms.gle/uTrCJN9gTCcUBj1z8"
+          class="google-form-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >応募フォーム</a
+        >
       </div>
     </div>
 
-    <div v-show="content1Visible">
-
-      <div class="flex justify-center items-center pt-16 bg-cyan-50 bg-image"
-        style="background-image: url('./assets/images/sakurajima.jpg'); background-size: cover; background-position: center;">
-        <img src="./assets/images/main_title.png" loading="lazy" class="w-full max-w-5xl object-scale-down object-center" />
-      </div>
-      
-      <!-- features - start -->
-      <div class="bg-gray-100 py-6 sm:py-2 lg:py-6">
-        <div class="mx-auto max-w-screen-lg px-4 md:px-8">
-
-          <div class="mb-10 md:mb-16 mt-12">
-
-            <div class="flex justify-center mb-4">
-              <a href="https://pycon-kyushu.connpass.com/event/314932/" target="_blank">
-                <button type="button"
-                  class="text-white bg-gradient-to-r from-orange-400 via-orange-500 to-orange-500 hover:bg-gradient-to-br focus:ring-red-400 focus:outline-none font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">参加申し込みはこちら</button>
-              </a>
-            </div>
-
-            <div id="social" class="flex items-center justify-center mb-4">
-              <p>
-                  <a href="https://twitter.com/PyConK" target="_blank" rel="noopener noreferrer" title="Twitter"><i
-                          class="fa-brands fa-x-twitter fa-3x"></i></a>&nbsp;
-                  <a href="https://www.facebook.com/kyushu.pycon.jp" target="_blank" rel="noopener noreferrer"
-                     title="Facebook"><i class="fa-brands fa-facebook fa-3x"></i></a>&nbsp;
-                  <a href="https://www.youtube.com/@pyconkyushu4071" target="_blank" rel="noopener noreferrer"
-                     title="Youtube"><i class="fa-brands fa-youtube fa-3x"></i></a>&nbsp;
-                  <a href="https://pyconjp.blogspot.com/search/label/kyushu" target="_blank" rel="noopener noreferrer"
-                     title="Blogger"><i class="fa-brands fa-blogger fa-3x"></i></a>&nbsp;
-              </p>
-            </div>
-
-            <!-- <div class="bg-white p-4 rounded-sm mb-4 border-2 border-orange-600">
-              <p class="mx-auto max-w-screen-lg text-start text-gray-500 md:text-lg">
-                一般参加申し込みは現在準備中です。準備が整い次第、お知らせいたします。
-              </p>
-            </div> -->
-
-            <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
-
-            <h3 class="mb-4 text-center text-2xl font-bold text-cyan-950 md:mb-6">Pythonの祭典、2024年春に鹿児島で開催します！</h3>
-            <div class="bg-white p-4 rounded-sm mb-4">
-              <p class="mx-auto max-w-screen-lg text-start text-gray-500 md:text-lg">
-                PyCon Kyushuは、プログラミング言語 Pythonのユーザが集う九州地区で開催される技術カンファレンスです。<br>
-                今回、鹿児島コミュニティの協力をいただき、2年ぶりに鹿児島で開催することになりました！<br>
-                <br>
-                Python初心者の方から上級者まで、参加していただく方全員にとって有意義なカンファレンス、
-                そして、地方での開催ならではのアットホームな雰囲気で、有益なセッションやネットワーキングの場になるように、<br>
-                したいと思っています。<br>
-                <br>
-                ぜひ、皆さんの参加をお待ちしています！
-              </p>
-            </div>
-          </div>
-
-          <div class="flex justify-center mb-10">
-            <div>
-              <div class="flex justify-start items-center space-x-2 ml-10">
-                <span class="material-symbols-outlined">
-                  location_on
-                </span>
-                <span class="text-xl font-bold text-slate-700">開催場所：markMEIZAN</span>
-              </div>
-
-              <div class="flex justify-start items-center space-x-2 ml-10">
-                <span class="material-symbols-outlined">
-                  schedule
-                </span>
-                <span class="text-xl font-bold text-slate-700">日時　　：2024年5月25日(土)</span>
-              </div>
-
-              <div class="flex justify-start items-center space-x-2 ml-10 mb-4">
-                <span class="material-symbols-outlined">
-                  paid
-                </span>
-                <span class="text-xl font-bold text-slate-700">参加費　：無料</span>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.4275017811415!2d130.5564986130613!3d31.594743743352787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353e5e040512a975%3A0xd4550a1353228ab7!2z44CSODkyLTA4MjEg6bm_5YWQ5bO255yM6bm_5YWQ5bO25biC5ZCN5bGx55S677yZ4oiS77yR77yV!5e0!3m2!1sja!2sjp!4v1700661923748!5m2!1sja!2sjp"
-              style="border: none; width: 100%; height: 24em"></iframe>
-          </div>
-
-          <!-- keynote -->
-          <div class="mb-10 md:mb-16 mt-24">
-            <h2 class="mb-4 text-center text-4xl font-bold text-cyan-800 md:mb-6 lg:text-5xl">
-              KeyNote
-              <br>
-            </h2>
-
-            <div id="keynote" class="container">
-              <div class="flex flex-col sm:flex-row space-x-4">
-                <div class="flex justify-center mb-2">
-                  <img class="rounded-full border-2 border-cyan-500 box-border object-cover" src="./assets/images/keynote.png" alt="keynote" />
-                </div>
-                <div class ="bg-white border-2 p-4 rounded-sm mb-4 flex-grow">
-                  <h3 class="text-3xl mb-4">渕田 孝康</h3>
-                  <p class="mb-4 text-gray-500 md:text-lg">
-                    鹿児島大学でニューラルネットワークや数理情報工学に関する研究に携わり、<br/>
-                    機械学習や仮想現実などを中心に研究を行ってきた。<br/>
-                    最近では、大学と地域のDX推進にも力を入れている。<br/>
-                    <br/>
-                    また、地域のデジタル教育事業にも積極的に取り組み、<br/>
-                    学生向けのさまざまなコンテストやイベントを主催し、<br/>
-                    若者たちがデジタル表現を社会に発信する機会を提供している。<br/>
-                  </p>
-                  <p class="mb-4  text-gray-500 md:text-lg">
-                    <strong>所属</strong>: <br/>
-                    <a href="https://www.cc.kagoshima-u.ac.jp/" target="_blank">鹿児島大学 総合科学域共同学系 情報基盤統括センター 教授</a> <br/>
-                    <a href="https://infarmation.org/" target="_blank">特定非営利活動法人 鹿児島インファーメーション 副理事長</a> <br/>
-                    <a href="https://kpc.kagoshima-kids.com/" target="_blank">鹿児島キッズプログラミングコンテスト実行委員会 会長</a> <br/>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Call for Proposals -->
-          <!-- <div class="mx-auto max-w-screen-lg px-4 md:px-8">
-
-            <h2 class="mb-4 text-center text-4xl font-bold text-cyan-800 md:mb-6 lg:text-5xl">
-              Call for Proposals
-              <br>
-            </h2>
-
-            <div class="mb-10 md:mb-16 mt-12">
-              <div class="bg-white p-4 rounded-sm mb-4">
-                <p class="mx-auto max-w-screen-lg text-start text-gray-500 md:text-lg">
-                  PyConKyushu 2024では、Pythonに関する幅広いトピックを扱うセッションを募集しています。<br>
-                  <br>
-                  詳細は、Googleフォームからご確認ください。<br>
-                  Pythonに関する技術や実践、教育に関することやコミュニティ活動など<br>
-                  ぜひあなたの知識や経験を共有してください！<br>
-                  <br>
-                  たくさんのご応募お待ちしております！<br>
-                  <br>
-                  提出期限：2024/3/17 23:59:59(JST)<br>
-                </p>
-              </div>
-  
-              <div class="flex justify-center mb-4">
-                <a href="https://forms.gle/Tf3xzJfVJsLDStLX7" target="_blank">
-                  <button type="button"
-                    class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">CfP申し込みはこちら</button>
-                </a>
-              </div>
-
-            </div>
-          </div> -->
-
-          <!-- sponsor -->
-          <div class="mb-10 md:mb-16 mt-24">
-            <h2 class="mb-4 text-center text-4xl font-bold text-cyan-800 md:mb-6 lg:text-5xl">
-              Sponsors
-              <br>
-            </h2>
-
-            <div class="bg-white p-4 rounded-sm mb-4">
-              <p class="mx-auto max-w-screen-lg text-start text-gray-500 md:text-lg">
-                PyConKyushuを開催するにあたり、<br>
-                イベントを一緒に盛り上げていただける企業様のご支援をお待ちしております。<br>
-                スポンサー特典の内容、お申し込みついては、下記のリンクよりpykyushu.jpのサイトをご覧ください。
-              </p>
-            </div>
-
-            <div class="flex justify-center mb-4">
-              <a href="https://www.pykyushu.jp/sponsor2024/" target="_blank">
-                <button type="button"
-                  class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">スポンサー申し込みはこちら</button>
-              </a>
-            </div>
-
-            <div class="mb-10 md:mb-16 mt-12">
-              <div id="sponsors" class="bg-white p-4 rounded-sm">
-                <div id="sponsorlist"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-      <div id="sponsor-modal" class="puremodal" v-bind:class="{ 'visible': showSponsorModal  && selectedSponsor}">
-        <div class="overlay close"></div>
-        <div class="window h-auto">
-          <header>
-            <span class="sponsor-name text-xm">{{ selectedSponsor ? selectedSponsor.name : '' }}</span>
-            <a class="close" @click="showSponsorModal = false">
-              <span class="material-symbols-outlined">
-                close
-                </span>
-            </a>
-          </header>
-          <div>
-            <a v-if="selectedSponsor" :href="selectedSponsor.url" target="_blank" rel="noopener noreferrer">
-              <img :src="'assets/images/sponsors/' + selectedSponsor.logo" style="width: 320px;">
-            </a>
-            <br>
-            <p class="text-gray-500 text-lg" v-html="selectedSponsor ? selectedSponsor.description : ''"></p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div v-show="content2Visible" style="margin-top: 75px;">
-
-      <div id="session" class="bg-gray-100 py-6 sm:py-2 lg:py-12">
-
-        <div class="flex flex-wrap">
-          <div v-for="(talk, index) in timetable" @click="openSessionModal(talk)" class="w-full md:w-1/2 p-1 h-auto">
-            <div class="bg-white rounded shadow p-6 overflow-wrap overflow-y-auto">
-              <a v-bind:class="['talk-level', `talk-${talk.level}`]">{{ translateLevel(talk.level) }}</a>
-              <h2 class="text-xl font-bold">{{ talk.title }}</h2>
-              <h3 class="text-xm font-bold mb-2">{{ talk.subTitle }}</h3>
-              <p class="text-gray-700 mb-2" v-html="talk.name"></p>
-              <p class="talk-description text-gray-500 text-lm overflow-hidden overflow-ellipsis" v-html="talk.description"></p>
-              </div>
-            </div>
-          </div>
-      </div>
-
-
-      <div id="session-modal" class="puremodal" v-if="showModal && selectedTalk" v-bind:class="{ 'visible': showModal && selectedTalk }">
-        <div class="overlay close"></div>
-        <div class="window min-w-10">
-          <header>
-            <span>　</span>
-            <a class="close" @click="showModal = false">              
-              <span class="material-symbols-outlined">
-              close
-              </span></a>
-          </header>
-          <div>
-            <a v-bind:class="['talk-level', `talk-${ selectedTalk ? selectedTalk.level : ''}`]">{{ selectedTalk ? translateLevel(selectedTalk.level) : '' }}</a>
-            <br>
-            <dl>
-              <dt>トークタイトル</dt>
-              <dd class="talk-title text-gray-700 md:text-lg">{{ selectedTalk ? selectedTalk.title : '' }}</dd>
-              <dd class="talk-subtitle text-gray-700 md:text-lg">{{ selectedTalk ? selectedTalk.subTitle : '' }}</dd>
-              <dt>スピーカー</dt>
-              <dd>
-                <a class="talk-speaker" target="_blank" rel="noopener noreferrer" v-html="selectedTalk ? selectedTalk.name : ''"></a>
-              </dd>
-              <dt>トーク内容</dt>
-              <dd class="talk-description  text-gray-700 md:text-lg" v-html="selectedTalk ? linkify(selectedTalk.description.replace(/\n/g, '<br>')) : ''"></dd>
-              <!-- <dt>YouTube</dt>
-              <dd>
-                <div class="talk-slide">
-                  <iframe v-if="selectedTalk" width="560" height="315" v-bind:src="selectedTalk.slide" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                  </iframe>
-                </div>
-              </dd> -->
-              <dt>言語</dt>
-              <dd class="talk-language">{{ selectedTalk ? selectedTalk.language : '' }}</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div v-show="content3Visible">
-
-      <section class="bg-white  antialiased">
-        <div class="max-w-screen-4xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
-          <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-cyan-800 mt-10 lg:mt-0">
-              TimeTable
-            </h2>
-          </div>
-
-          <div class="flow-root max-w-6xl mx-auto mt-8 sm:mt-12 lg:mt-16">
-            <div class="w-full -my-4 divide-y divide-gray-200 dark:divide-gray-700">
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="" class="timetable">
-                      <h2 class="text-xl font-bold mb-2 text-center">HALL A</h2>
-                    </div>
-
-                    <div id="" class="timetable">
-                      <h2 class="text-xl font-bold mb-2 text-center">HALL B</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right shrink-0">
-                  09:50 - 10:00
-                </p>
-                <h3 class="text-lg font-semibold text-gray-900">
-                  <a>オープニング/Opening</a>
-                </h3>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  10:00 - 10:45
-                </p>
-
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="keynote2" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  10:55 - 11:15
-                </p>
-
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="sponsor1" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  11:15 - 11:35
-                </p>
-
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="sponsor2" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900 mb-2"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  13:00 - 13:30
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A1" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B1" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900 mb-2"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  13:40 - 14:10
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A2" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B2" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  14:20 - 14:50
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A3" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B3" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  15:20 - 15:50
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A4" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B4" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  16:00 - 16:30
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A5" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B5" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  16:40 - 17:10
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="A6" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold mb-2"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-
-                    <div id="B6" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <a href="#" class="talk-level"></a>
-                      <h2 class="text-xl font-bold"></h2>
-                      <h3 class="text-ml font-semibold text-gray-900 mb-2"></h3>
-                      <p class="text-gray-700 mb-2"></p>
-                      <a href="#" class="btn btn-primary"></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
-                  17:20 - 17:40
-                </p>
-                <div class="flex justify-between space-x-4 w-full">
-                  <div class="grid grid-cols-2 gap-4 w-full">
-                    <div id="" class="timetable bg-white rounded shadow p-1 min-h-36">
-                      <h2 class="text-xl font-bold mb-2">ライトニングトーク</h2>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
-                <p class="w-32 text-lg font-normal text-gray-500 sm:text-right shrink-0">
-                  17:40 - 17:50
-                </p>
-                <h3 class="text-lg font-semibold text-gray-900">
-                  <a>クロージング/Closing</a>
-                </h3>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div id="timetable-modal" class="puremodal" v-if="showModal && selectedTalk" v-bind:class="{ 'visible': showModal && selectedTalk }">
-        <div class="overlay close"></div>
-        <div class="window min-w-10">
-          <header>
-            <span>　</span>
-            <a class="close" @click="showModal = false">              
-              <span class="material-symbols-outlined">
-              close
-              </span></a>
-          </header>
-          <div>
-            <a v-bind:class="['talk-level', `talk-${ selectedTalk ? selectedTalk.level : ''}`]">{{ selectedTalk ? translateLevel(selectedTalk.level) : '' }}</a>
-            <br>
-            <dl>
-              <dt>トークタイトル</dt>
-              <dd class="talk-title text-gray-700 md:text-lg">{{ selectedTalk ? selectedTalk.title : '' }}</dd>
-              <dd class="talk-subtitle text-gray-700 md:text-lg">{{ selectedTalk ? selectedTalk.subTitle : '' }}</dd>
-              <dt>スピーカー</dt>
-              <dd>
-                <a class="talk-speaker" target="_blank" rel="noopener noreferrer" v-html="selectedTalk ? selectedTalk.name : ''"></a>
-              </dd>
-              <dt>トーク内容</dt>
-              <dd class="talk-description  text-gray-700 md:text-lg" v-html="selectedTalk ? linkify(selectedTalk.description.replace(/\n/g, '<br>')) : ''"></dd>
-              <dt>言語</dt>
-              <dd class="talk-language">{{ selectedTalk ? selectedTalk.language : '' }}</dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div v-show="content5Visible">
-      <section id="policy-box" class="container centered">
-        <div class="mx-auto w-3/4">
-          <h2 class="mt-24 text-center text-4xl font-bold text-cyan-800 md:mb-6 lg:text-5xl">
-            行動規範
-            <br>
-          </h2>
-          <div class="relative mt-12 text-box1">
-            <div class="flex justify-end mx-auto max-w-4xl mb-5">
-              <!-- <button @click="switchLanguage" class="bg-cyan-500 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded">
-                {{ buttonLabel }}
-              </button> -->
-
-              <div class="h-full overflow-hidden bg-white text-gray-900 font-sans">
-                <div class="flex items-center justify-center h-full text-center">
-                  <div class="lang mx-auto">
-                    <table>
-                      <tr>
-                        <td class="tdlang">
-                          <button id="jp"
-                            class="button_lang transition-colors duration-200 ease-in-out rounded-full w-20 py-1"
-                            :class="{ 'bg-cyan-300': language === 'jp', 'bg-gray-200 hover:bg-gray-300': language !== 'jp' }"
-                            @click="switchLanguage('jp')">JP</button>
-                        </td>
-                        <td class="tdlang">
-                          <button id="en"
-                            class="button_lang transition-colors duration-200 ease-in-out rounded-full w-20 py-1"
-                            :class="{ 'bg-cyan-300': language === 'en', 'bg-gray-200 hover:bg-gray-300': language !== 'en' }"
-                            @click="switchLanguage('en')">EN</button>
-                        </td>
-                      </tr>
-                    </table>
-                    <div class="translation text-center my-2" :class="language">
-                      {{ message }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="flex justify-center">
-              <p v-if="language === 'jp'" class="border-2 border-cyan-600 mx-auto max-w-4xl p-6 mr-4 mb-4 centered">
-                PyCon Kyushu は、九州にゆかりのある Python ユーザを主体に集まったPyCon Kyushu 実行委員会を主催として Python や Python
-                を使ったソフトウェアについて情報交換、交流をするためのカンファレンスです。
-                <br> PyCon Kyushu の開催を通じて九州の Python ユーザーの新たな開拓、 および日本各地、海外との Python ユーザーと様々な分野の知識や情報を交換し、
-                新たなパートナーやコミュニティの繁栄、仕事やビジネスチャンスを増やせる場所とすることを目的としています。
-                <br>
-                <br>
-                ハラスメント行為には、言葉による性別、性的指向、障碍の有無、外見、身体の大きさ、人種、宗教に関する攻撃的なコメント、公的空間での性的な映像表現、意図的な威力行為、ストーキング、つきまとい、写真撮影や録音によるいやがらせ、トークやその他の会議イベントに対して繰り返して中断しようとする行為、不適切な身体接触、そして望まれない性的な注意を引きつける行為を含みます。
-                <br>
-                <br> 参加者は、これらのハラスメント行為を止めるように求められた場合、すぐに従わなければなりません。
-                <br>
-                <br> スポンサーもまた反ハラスメント行為ポリシーに従わなければなりません。
-                <br> 特に、スポンサーは性的な関心を引き起こす映像表現、活動、あるいはその他の物品を使うべきではありません。
-                <br>
-                ボランティアを含め、ブースのスタッフは、性的な関心を引き起こすような服装/制服/コスチュームを使うべきではありませんし、その他の手段で性的な関心を引き起こすような環境を作ることもすべきではありません。
-                <br>
-                <br> 参加者がハラスメント行為に属するふるまいをした場合は、会議主催者は適切と判断した範囲で、当該行為を行った者に対する警告や、参加費を返還せずに会議から追放処分とするなどを含むいかなる行動も取ります。
-                <br>
-                <br> もしあなたがハラスメントに遭った場合、他の人がハラスメントに遭っている場合、あるいは他に気になることがあった時は、すぐに会議スタッフの誰かに連絡していただくようお願いします。
-                <br> 会議スタッフは会議のブランドを付けたTシャツを着ています。
-                <br>
-                <br> 会議スタッフは、ハラスメントを経験した人が、会議期間中安全かつ安心と感じられるように、参加者がホテル/会場の警備や近隣の警察に連絡すること、付き添い者の提供、およびその他の支援を行います。
-                <br> 私達にとってあなたが参加しているのは大事なことなのです。
-                <br>
-                <br> 私達は参加者が会議場とワークショップ会場、また会議に関連したソーシャルイベントにて、このルールに従うことを望みます。
-                <br>
-              </p>
-              <p v-else class="border-2 border-cyan-600 mx-auto max-w-4xl p-6 mr-4 mb-4 centered">
-                PyCon Kyushu is a conference for exchanging information about Python and
-                Python-based software, organized by the PyCon Kyushu Committee,
-                which is composed mainly of Python users with connections to Kyushu.<br>
-                <br>
-                The purpose of PyCon Kyushu is to develop new Python users in Kyushu,
-                to exchange knowledge and information in various fields with Python users
-                from all over Japan and overseas, and to provide a place where new partners
-                and communities can flourish and job and business opportunities can increase.<br>
-                <br>
-                Harassment includes offensive verbal comments related to gender, age,
-                sexual orientation, disability, physical appearance, body size, race,
-                religion, sexual images in public spaces, deliberate intimidation, stalking,
-                following, harassing photography or recording, sustained disruption of talks
-                or other events, inappropriate physical contact, and unwelcome sexual attention.<br>
-                <br>
-                Participants asked to stop any harassing behavior are expected to comply promptly.<br>
-                <br>
-                Sponsors are also subject to the anti-harassment policy. In particular,
-                sponsors should not use sexualized images, activities, or other material.<br>
-                Booth staff (including volunteers) should not use sexualized clothing/uniforms/costumes,
-                or otherwise create a sexualized environment.<br>
-                <br>
-                If a participant engages in harassing behavior,
-                the conference organizers may take any action they deem appropriate,
-                including warning the offender or expulsion from the conference with no refund.<br>
-                <br>
-                If you are being harassed, notice that someone else is being harassed,
-                or have any other concerns, please contact a member of the conference staff immediately.<br>
-                Conference staff can be identified as they'll be wearing branded t-shirts.<br>
-                <br>
-                Conference staff will be happy to help participants contact
-                hotel/venue security or local law enforcement, provide escorts,
-                or otherwise assist those experiencing harassment to feel safe
-                for the duration of the conference. We value your attendance.<br>
-                <br>
-                We expect participants to follow these rules at conference and workshop venues
-                and conference-related social events.<br>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <div class="inset-x-0 bottom-0 bg-gray-800 text-white text-sm p-4">
-      <a href="https://www.pykyushu.jp/" target="_blank">© PyCon Kyushu 実行委員会</a><br />
-      <br />PyCon™ is a trademark for worldwide conference activities claimed by the Python Software foundation.
-      <br />PyCon Kyushu is organized by volunteers from PyCon Kyushu in Japan.
-      <br />Copyright (c) PyCon Kyushu Executive Committee 2017-
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="assets/js/app.js"></script>
-</body>
+    <footer>
+      <p><a href="#">© PyCon Kyushu 実行委員会</a></p>
+      <p>
+        PyCon™ is a trademark for worldwide conference activities claimed by the
+        Python Software Foundation.
+      </p>
+      <p>PyCon Kyushu is organized by volunteers from PyCon Kyushu in Japan.</p>
+      <p>Copyright (c) PyCon Kyushu Executive Committee 2017-2025</p>
+    </footer>
+  </body>
 </html>
